@@ -3,3 +3,53 @@
 # malum biz cevo@cevdetabbas.com ile login oldugumuzdan kelli bu drive mevzuulari bayaa bir karismakta o sebepten zaar
 
 # bu normal ve One drive folderlari birbirine sysncleyecek bi komut lazim ve elzem
+# bu komutu WSL de calistiriyoruz
+mkdir /mnt/c/Users/cevo/Pictures
+mkdir /mnt/c/Users/cevo/Music
+mkdir /mnt/c/Users/cevo/Videos
+
+cp -rn /mnt/c/Users/cevo/Desktop/* /mnt/c/Users/cevo/OneDrive/Desktop/
+cp -rn /mnt/c/Users/cevo/OneDrive/Desktop/* /mnt/c/Users/cevo/Desktop/
+
+cp -rn /mnt/c/Users/cevo/Documents/* /mnt/c/Users/cevo/OneDrive/Documents/
+cp -rn /mnt/c/Users/cevo/OneDrive/Documents/* /mnt/c/Users/cevo/Documents/
+
+cp -rn /mnt/c/Users/cevo/Pictures/* /mnt/c/Users/cevo/OneDrive/Pictures/
+cp -rn /mnt/c/Users/cevo/OneDrive/Pictures/* /mnt/c/Users/cevo/Pictures/
+
+cp -rn /mnt/c/Users/cevo/Music/* /mnt/c/Users/cevo/OneDrive/Music/
+cp -rn /mnt/c/Users/cevo/OneDrive/Music/* /mnt/c/Users/cevo/Music/
+
+cp -rn /mnt/c/Users/cevo/Videos/* /mnt/c/Users/cevo/OneDrive/Videos/
+cp -rn /mnt/c/Users/cevo/OneDrive/Videos/* /mnt/c/Users/cevo/Videos/
+
+# bunlari WSL e coplayla root a
+cp -rn /mnt/c/Users/cevo/Desktop/* /root/Desktop/
+cp -rn /mnt/c/Users/cevo/Documents/* /root/Documents/
+cp -rn /mnt/c/Users/cevo/Pictures/* /root/Pictures/
+cp -rn /mnt/c/Users/cevo/Music/* /root/Music/
+cp -rn /mnt/c/Users/cevo/Videos/* /root/Videos/
+cp -rn /mnt/c/Users/cevo/Videos/* /root/Videos/
+
+cp -rn /root/Desktop/* /mnt/c/Users/cevo/Desktop/
+cp -rn /root/Desktop/* /root/
+cp -rn /root/Documents/* /mnt/c/Users/cevo/Documents/
+cp -rn /root/Pictures/* /mnt/c/Users/cevo/Pictures/
+cp -rn /root/Music/* /mnt/c/Users/cevo/Music/
+cp -rn /root/Videos/* /mnt/c/Users/cevo/Videos/
+cp -rn /root/Videos/* /mnt/c/Users/cevo/Videos/
+
+
+
+# send them to otak
+# once ssh-copy-id yapilacak yap
+
+scp -r /mnt/c/Users/cevo/Desktop/* cevo@192.168.1.111:/home/cevo/Desktop
+scp -r /mnt/c/Users/cevo/Documents/* cevo@192.168.1.111:/home/cevo/Documents
+scp -r /mnt/c/Users/cevo/Pictures/* cevo@192.168.1.111:/home/cevo/Pictures
+scp -r /mnt/c/Users/cevo/Music/* cevo@192.168.1.111:/home/cevo/Music
+scp -r /mnt/c/Users/cevo/Videos/* cevo@192.168.1.111:/home/cevo/Videos
+scp -r /mnt/c/Users/cevo/Downloads/* cevo@192.168.1.111:/home/cevo/Downloads
+
+
+

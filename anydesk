@@ -1,0 +1,15 @@
+sudo dnf update -y
+
+sudo tee /etc/yum.repos.d/AnyDesk.repo <<EOF
+[anydesk]
+name=AnyDesk CentOS - stable
+baseurl=http://rpm.anydesk.com/centos/x86_64/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
+EOF
+
+sudo dnf install anydesk -y
+anydesk
+sudo systemctl enable anydesk.service
+sudo systemctl start anydesk.service
